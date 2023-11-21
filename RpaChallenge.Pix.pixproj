@@ -10,6 +10,10 @@
       <IsMain>false</IsMain>
       <Path>Core\InitConfig.pix</Path>
     </ProjectFileItem>
+    <ProjectFileItem z:Id="i4">
+      <IsMain>false</IsMain>
+      <Path>Core\OpenBrowser.pix</Path>
+    </ProjectFileItem>
   </Files>
   <MasterUploadId i:nil="true" />
   <Name>RpaChallenge.Pix</Name>
