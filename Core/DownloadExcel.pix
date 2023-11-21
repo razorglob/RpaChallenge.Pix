@@ -6,18 +6,84 @@
   <Logic z:Id="i2" i:type="ExecutedStep">
     <Childs>
       <AbstractStep z:Id="i3" i:type="ExecutedStep">
+        <Childs>
+          <AbstractStep z:Id="i4" i:type="ExecutedStep">
+            <Childs>
+              <AbstractStep z:Id="i5" i:type="ExecutedStep">
+                <Childs />
+                <Id>dca1602a-12c4-4704-a789-01c3f715bd7e</Id>
+                <Parent z:Ref="i4" />
+                <PropertyValues>
+                  <PropertyValue z:Id="i6">
+                    <PropertyName>NewFolderPath</PropertyName>
+                    <_dataType>Expression</_dataType>
+                    <_expression>Path.Combine(Environment.CurrentDirectory,"Temp")</_expression>
+                    <_value i:nil="true" />
+                    <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                  </PropertyValue>
+                </PropertyValues>
+                <SelectedOptionId i:nil="true" />
+                <EnableStatus>true</EnableStatus>
+                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                <RetryCount>-1</RetryCount>
+                <Text></Text>
+                <_activityFullName>Activities.Files.CreateFolder</_activityFullName>
+              </AbstractStep>
+            </Childs>
+            <Id>78f894b0-3972-4fa3-9e7a-53db28e7bcd3</Id>
+            <Parent z:Ref="i3" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text></Text>
+            <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i7" i:type="ExecutedStep">
+            <Childs />
+            <Id>012fd83a-64e7-441a-88ac-1ead294cd93f</Id>
+            <Parent z:Ref="i3" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text></Text>
+            <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
+          </AbstractStep>
+        </Childs>
+        <Id>754ae8c3-30ff-4792-9cca-e60f57d32143</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i8">
+            <PropertyName>Condition</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>!Directory.Exists(Path.Combine(Environment.CurrentDirectory,"Temp"))</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Проверка есть ли папка Temp</Text>
+        <_activityFullName>BR.Core.Base.If</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i9" i:type="ExecutedStep">
         <Childs />
         <Id>42bd1b5f-83d8-45c0-9d31-b3e2fe1a6bf9</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i4">
+          <PropertyValue z:Id="i10">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>Path.Combine(Environment.CurrentDirectory,"Test",Guid.NewGuid().ToString()+".xlsx")</_expression>
+            <_expression>Path.Combine(Environment.CurrentDirectory,"Temp",Guid.NewGuid().ToString()+".xlsx")</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i5">
+          <PropertyValue z:Id="i11">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>str_ExcelPath</_expression>
@@ -32,89 +98,89 @@
         <Text></Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i6" i:type="ExecutedStep">
+      <AbstractStep z:Id="i12" i:type="ExecutedStep">
         <Childs />
         <Id>73ad4575-030b-46b9-a867-788152380b85</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i7">
+          <PropertyValue z:Id="i13">
             <PropertyName>Url</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>in_dict_Config["RpaChallenge_DownloadUrl"].ToString()</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i8">
+          <PropertyValue z:Id="i14">
             <PropertyName>Timeout</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:int">20</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i9">
+          <PropertyValue z:Id="i15">
             <PropertyName>Method</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://schemas.datacontract.org/2004/07/Activities.HTTP" i:type="d7p1:HTTPResponsesWithFile.TypeMethod">Get</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i10">
+          <PropertyValue z:Id="i16">
             <PropertyName>PostData</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i11">
+          <PropertyValue z:Id="i17">
             <PropertyName>FileNames</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i12">
+          <PropertyValue z:Id="i18">
             <PropertyName>DataEncode</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:string">utf-8</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i13">
+          <PropertyValue z:Id="i19">
             <PropertyName>ContenDataType</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i14">
+          <PropertyValue z:Id="i20">
             <PropertyName>Headers</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i15">
+          <PropertyValue z:Id="i21">
             <PropertyName>ContentResult</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i16">
+          <PropertyValue z:Id="i22">
             <PropertyName>HeadersResult</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i17">
+          <PropertyValue z:Id="i23">
             <PropertyName>Status</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i18">
+          <PropertyValue z:Id="i24">
             <PropertyName>PathToFile</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>str_ExcelPath</_expression>
@@ -129,19 +195,19 @@
         <Text></Text>
         <_activityFullName>Activities.HTTP.HTTPResponsesWithFile</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i19" i:type="ExecutedStep">
+      <AbstractStep z:Id="i25" i:type="ExecutedStep">
         <Childs />
         <Id>df04c77e-7eb3-48e3-965e-839ca9621d40</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i20">
+          <PropertyValue z:Id="i26">
             <PropertyName>Result</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>list_ExcelSheets</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i21">
+          <PropertyValue z:Id="i27">
             <PropertyName>FileName</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>str_ExcelPath</_expression>
@@ -156,54 +222,54 @@
         <Text></Text>
         <_activityFullName>Activities.Office.Excel.GetSheetsNames</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i22" i:type="ExecutedStep">
+      <AbstractStep z:Id="i28" i:type="ExecutedStep">
         <Childs />
         <Id>bca6e3dd-599e-4ca3-be72-2f4c6cc0110d</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i23">
+          <PropertyValue z:Id="i29">
             <PropertyName>Range</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>""</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i24">
+          <PropertyValue z:Id="i30">
             <PropertyName>WithHeaders</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">true</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i25">
+          <PropertyValue z:Id="i31">
             <PropertyName>IgnoreEmptyRowsColumsAtStart</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">true</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i26">
+          <PropertyValue z:Id="i32">
             <PropertyName>GetTypedValues</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i27">
+          <PropertyValue z:Id="i33">
             <PropertyName>Result</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>out_dt_ExcelData</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i28">
+          <PropertyValue z:Id="i34">
             <PropertyName>SheetName</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>list_ExcelSheets.First()</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i29">
+          <PropertyValue z:Id="i35">
             <PropertyName>FileName</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>str_ExcelPath</_expression>
@@ -232,21 +298,21 @@
   <Name>DownloadExcel.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <Params>
-    <Parameter z:Id="i30">
+    <Parameter z:Id="i36">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dict_Config</Name>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i31">
+    <Parameter z:Id="i37">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>out_dt_ExcelData</Name>
-      <TypeString>System.Object</TypeString>
+      <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
   </Params>
   <Variables xmlns:d2p1="http://schemas.datacontract.org/2004/07/BR.Logic.Params">
-    <d2p1:Variable z:Id="i32">
+    <d2p1:Variable z:Id="i38">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Name>list_ExcelSheets</d2p1:Name>
       <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>

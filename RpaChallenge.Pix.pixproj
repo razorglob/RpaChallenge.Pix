@@ -18,6 +18,14 @@
       <IsMain>false</IsMain>
       <Path>Core\DownloadExcel.pix</Path>
     </ProjectFileItem>
+    <ProjectFileItem z:Id="i6">
+      <IsMain>false</IsMain>
+      <Path>Core\TypeUserForm.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i7">
+      <IsMain>false</IsMain>
+      <Path>Core\KillAllProcess.pix</Path>
+    </ProjectFileItem>
   </Files>
   <MasterUploadId i:nil="true" />
   <Name>RpaChallenge.Pix</Name>
